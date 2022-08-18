@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ddos-app
 spec:
-  replicas: 128
+  replicas: 64
   selector:
     matchLabels:
       app: ddos-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ddos-app
-        image: maxandriani/ddos
+        image: maxandriani/ddos:latest
         resources:
           limits:
             memory: "128Mi"
