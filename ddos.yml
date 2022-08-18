@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ddos-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ddos-app
+  template:
+    metadata:
+      labels:
+        app: ddos-app
+    spec:
+      containers:
+      - name: ddos-app
+        image: maxandriani/ddos
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
