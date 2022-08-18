@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ddos-app
 spec:
-  replicas: 1
+  replicas: 128
   selector:
     matchLabels:
       app: ddos-app
